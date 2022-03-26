@@ -1,5 +1,6 @@
 const textInput = document.querySelector('#text-input');
 const memeText = document.querySelector('#meme-text');
+const memeInsert = document.querySelector('#meme-insert');
 const image = document.querySelector('#meme-image');
 const imgContainer = document.querySelector('#meme-image-container');
 const fireBtn = document.querySelector('#fire');
@@ -10,9 +11,9 @@ const meme2 = document.querySelector('#meme-2');
 const meme3 = document.querySelector('#meme-3');
 const meme4 = document.querySelector('#meme-4');
 
-const loadFile = function loadFile(event) { // https://stackoverflow.com/questions/4459379/preview-an-image-before-it-is-uploaded
+function loadFile(event) { // https://stackoverflow.com/questions/4459379/preview-an-image-before-it-is-uploaded
   image.src = URL.createObjectURL(event.target.files[0]);
-};
+}
 
 function showText() {
   memeText.innerText = textInput.value;
@@ -57,3 +58,4 @@ meme1.addEventListener('click', addMeme1);
 meme2.addEventListener('click', addMeme2);
 meme3.addEventListener('click', addMeme3);
 meme4.addEventListener('click', addMeme4);
+memeInsert.addEventListener('click', loadFile);
